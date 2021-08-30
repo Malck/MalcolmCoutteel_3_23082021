@@ -47,7 +47,7 @@ header {
       margin-top: 5px;
 }
 }
-
+/********************************** SECTION 1 *****************************/
 .section-1{
     display: flex;
     justify-content: center;
@@ -57,10 +57,11 @@ header {
      .position {
         background-color: rgb(234, 234, 234);  
         height: 50px;
-        padding:0;
+        padding-right: 32px;
         justify-content: center;
         align-items: center;
         display: flex;
+        border-top: solid 2px rgb(216, 216, 216);
        
         i{
             padding-right: 20px;
@@ -94,12 +95,16 @@ header {
             align-items: center;
             justify-content: center;
             color: white;
+            &:hover{
+                background-color: lighten($color: #FF79DA, $amount: 4)
+            }
+            
         }
       }
 
 }
 
-
+/*************************** SECTION 2 *****************************/
 .section-2{
  height:442px;
 
@@ -125,10 +130,12 @@ header {
             background-color: rgb(246, 246, 246);
            /* border: solid 1px rgb(246, 246, 246); */
             border-radius: 20px;
+            box-shadow: 3px 8px 6px #e6e6e696;
         }
         i{
-            padding:0 25px;
+            padding:0 30px;
             color: grey;
+            width: 70px;
         } 
     } 
 
@@ -150,6 +157,9 @@ header {
     position: absolute;
     top: 22px;
     left: -12px;
+}
+.num1 i{
+    font-size: large;
 }
 .num2 p{
     border: 1px solid #9356DC;
@@ -180,10 +190,10 @@ header {
     left: -12px;
 }
 
-
+/****************************Section 3 *************************/
 
 .section-3{
-    height: 1250px;
+    height: 1300px;
     background-color: rgb(246, 246, 246);
 
     h1{
@@ -199,6 +209,7 @@ header {
         margin-bottom: 20px;
         background-color: white;
         border-radius: 15px;
+        box-shadow: 2px 2px 8px #e6e6e6;
     }
     img{
         width:335px;
@@ -219,8 +230,7 @@ header {
 
 }
 
-
-
+/***************************FOOTER************************ */
 footer{
     height:240px;
     background-color:rgb(53, 53, 53);
@@ -253,4 +263,43 @@ footer .fa-hands-helping{
 
 a{
     text-decoration: none;
+}
+
+/******************* Menus *********************/ 
+
+.imageback1{
+    background:url(../MalcolmCoutteel_3_23082021/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg) center/cover;
+    width: 375px;
+    height: 260px;
+}
+
+.maincontent{
+    background-color: rgb(246, 246, 246);
+}
+.titremenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+
+    h1{
+        font-family: "Shrikhand", sans-serif;
+    }
+
+    i{
+        color: black;
+        font-size: 24px;
+    }
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order{
+    margin-top: 40px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
