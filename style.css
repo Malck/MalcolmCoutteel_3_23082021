@@ -134,6 +134,8 @@ header .image-header {
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
+  -webkit-box-shadow: 3px 5px 6px #dadada;
+          box-shadow: 3px 5px 6px #dadada;
 }
 
 .section-1 .reserv .btn:hover {
@@ -142,7 +144,7 @@ header .image-header {
 
 /*************************** SECTION 2 *****************************/
 .section-2 {
-  height: 442px;
+  height: 410px;
 }
 
 .section-2 h1 {
@@ -164,7 +166,7 @@ header .image-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 280px;
+  height: 290px;
   padding-left: 10px;
 }
 
@@ -178,7 +180,7 @@ header .image-header {
   color: black;
   /*  text-decoration: none; */
   width: 315px;
-  height: 70px;
+  height: 75px;
   background-color: #f6f6f6;
   /* border: solid 1px rgb(246, 246, 246); */
   border-radius: 20px;
@@ -213,7 +215,7 @@ header .image-header {
           align-items: center;
   color: white;
   position: absolute;
-  top: 22px;
+  top: 25px;
   left: -12px;
 }
 
@@ -238,7 +240,7 @@ header .image-header {
           align-items: center;
   color: white;
   position: absolute;
-  top: 22px;
+  top: 25px;
   left: -12px;
 }
 
@@ -259,7 +261,7 @@ header .image-header {
           align-items: center;
   color: white;
   position: absolute;
-  top: 22px;
+  top: 25px;
   left: -12px;
 }
 
@@ -300,6 +302,33 @@ header .image-header {
 
 .section-3 figcaption p {
   padding: 0 0 20px 15px;
+}
+
+figure {
+  position: relative;
+}
+
+figure .new {
+  position: absolute;
+  background-color: #99E2D0;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 30px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #008766;
+  border-radius: 2px;
 }
 
 /***************************FOOTER************************ */
@@ -360,10 +389,53 @@ header a.btn i {
 .maincontent {
   background-color: #f6f6f6;
   border-radius: 30px 30px 0 0;
+  margin-top: -40px;
 }
 
 .maincontent h4 {
   margin: 30px 0;
+}
+
+.opening {
+  position: relative;
+}
+
+.opening h4:after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #99E2D0;
+  position: absolute;
+  top: 22px;
+  left: 0px;
+}
+
+.miding {
+  position: relative;
+}
+
+.miding h4:after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #99E2D0;
+  position: absolute;
+  top: 22px;
+  left: 0px;
+}
+
+.ending {
+  position: relative;
+}
+
+.ending h4:after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #99E2D0;
+  position: absolute;
+  top: 22px;
+  left: 0px;
 }
 
 .titremenu {
@@ -424,28 +496,14 @@ header a.btn i {
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
+  -webkit-box-shadow: 3px 5px 6px #dadada;
+          box-shadow: 3px 5px 6px #dadada;
 }
 
 .order .btn:hover {
   background-color: #ff8de0;
 }
 
-/*
-.opening,
-.miding,
-.ending {
-    height: 310px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.miding{
-    h2{
-        margin-top: 30px;
-    }
-}
-*/
 .foodlist {
   height: 230px;
   display: -webkit-box;
@@ -479,9 +537,262 @@ header a.btn i {
   -webkit-box-shadow: 6px 6px 15px lightgrey;
           box-shadow: 6px 6px 15px lightgrey;
   color: black;
+  -webkit-animation: food-loading 1s forwards;
+          animation: food-loading 1s forwards;
+  overflow: hidden;
 }
 
 .food p {
   font-size: 15px;
 }
+
+.food2 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.food3 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes food-loading {
+  0% {
+    color: white;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    color: black;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes food-loading {
+  0% {
+    color: white;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    color: black;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+/* ***************************  Animations **********************/
+.like {
+  position: absolute;
+  right: 20px;
+  bottom: 35px;
+}
+
+.fa-heart {
+  font-size: 22px;
+}
+
+.far {
+  position: relative;
+  left: 30px;
+}
+
+.far:hover {
+  visibility: hidden;
+}
+
+.like .fas {
+  visibility: hidden;
+  color: #9356dc;
+  position: relative;
+  left: 4px;
+}
+
+.like:hover .fas {
+  visibility: visible;
+  -webkit-animation: fadeIn ease 3s;
+          animation: fadeIn ease 3s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  place-items: center center;
+  z-index: 3;
+  margin: auto;
+  pointer-events: none;
+  -webkit-animation: loading 3s linear both;
+          animation: loading 3s linear both;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid black;
+  border-left-color: #FF79DA;
+  border-right-color: #99E2D0;
+  border-radius: 100%;
+  margin: auto;
+  -webkit-animation: spin 3s linear both;
+          animation: spin 3s linear both;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* ************* spinner ************/
+/*
+.loader {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    opacity: 1;
+    overflow: hidden;
+    z-index: 3;
+    animation-name: loading;
+    animation-duration: 2s;
+   
+}
+
+.spinner {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: blue;
+    animation: spin 2s linear infinite;
+}
+
+.spinner:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: black;
+    animation: spin 1.5s linear infinite;
+}
+
+.spinner:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: red;
+    -webkit-animation: spin 0.75s linear infinite;
+    animation: spin 0.75s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading {
+    0% {
+        height: 100%;
+    }
+    99% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+*/
 /*# sourceMappingURL=style.css.map */

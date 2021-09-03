@@ -95,6 +95,7 @@ header {
             align-items: center;
             justify-content: center;
             color: white;
+            box-shadow: 3px 5px 6px #dadada;
             &:hover{
                 background-color: lighten($color: #FF79DA, $amount: 4)
             }
@@ -106,7 +107,7 @@ header {
 
 /*************************** SECTION 2 *****************************/
 .section-2{
- height:442px;
+ height:410px;
 
     h1{
          margin-top: 50px;
@@ -117,7 +118,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 280px;
+        height: 290px;
         padding-left: 10px;
 
         a{
@@ -126,7 +127,7 @@ header {
             color: black;
            /*  text-decoration: none; */
             width: 315px;
-            height: 70px;
+            height: 75px;
             background-color: rgb(246, 246, 246);
            /* border: solid 1px rgb(246, 246, 246); */
             border-radius: 20px;
@@ -155,7 +156,7 @@ header {
     align-items: center;
     color: white;
     position: absolute;
-    top: 22px;
+    top: 25px;
     left: -12px;
 }
 .num1 i{
@@ -172,7 +173,7 @@ header {
     align-items: center;
     color: white;
     position: absolute;
-    top: 22px;
+    top: 25px;
     left: -12px;
 }
 .num3 p{
@@ -186,7 +187,7 @@ header {
     align-items: center;
     color: white;
     position: absolute;
-    top: 22px;
+    top: 25px;
     left: -12px;
 }
 
@@ -229,6 +230,28 @@ header {
     }
 
 }
+figure{
+    position: relative;
+    .new{
+        position: absolute;
+        background-color: #99E2D0;
+        top: 20px;
+        right: 20px;
+        width: 80px;
+        height: 30px;
+        padding: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: rgb(0, 135, 102 );
+        border-radius: 2px; 
+    }
+    
+}
+
+
 
 /***************************FOOTER************************ */
 footer{
@@ -288,10 +311,50 @@ header {
 .maincontent{
     background-color: rgb(246, 246, 246);
     border-radius: 30px 30px 0 0;
+    margin-top: -40px;
     h4{
         margin: 30px 0 ;
     }
 }
+
+.opening {
+    position: relative;
+    h4:after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #99E2D0;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+}
+}
+.miding {
+    position: relative;
+    h4:after{
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #99E2D0;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+}
+}
+.ending {
+    position: relative;
+    h4:after{
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #99E2D0;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+}
+}
+
+
 .titremenu{
     display: flex;
     justify-content: space-between;
@@ -328,27 +391,14 @@ header {
         align-items: center;
         justify-content: center;
         color: white;
+        box-shadow: 3px 5px 6px #dadada;
         &:hover{
             background-color: lighten($color: #FF79DA, $amount: 4)
+        
         }
     }
 }
-/*
-.opening,
-.miding,
-.ending {
-    height: 310px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
-.miding{
-    h2{
-        margin-top: 30px;
-    }
-}
-*/
 .foodlist{
     height: 230px;
     display: flex;
@@ -366,9 +416,217 @@ header {
     padding: 10px;
     box-shadow: 6px 6px 15px lightgrey;
     color: black;
+    animation: food-loading 1s forwards;
+    overflow: hidden;
     p{
         font-size: 15px;
     }
     
 }
-     
+.food2{
+    animation-delay: 0.4s;
+
+}
+.food3{
+    animation-delay: 0.8s;
+}
+@keyframes food-loading{
+
+0% {
+    color: white;
+    transform: translateY(10px);
+}
+100% {
+    
+    color: black;
+    transform: translateY(0px);
+}
+}
+
+/* ***************************  Animations **********************/
+
+
+
+.like {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+}
+
+.fa-heart {
+     font-size: 22px;
+}
+
+.far {
+    position: relative;
+    left: 30px;
+}
+.far:hover {
+    visibility: hidden;
+}
+
+.like .fas {
+    visibility: hidden;
+    color: #9356dc;
+    position: relative;
+    left: 4px;
+}
+
+.like:hover .fas {
+    visibility: visible;
+    animation: fadeIn ease 3s;
+}
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }  
+
+
+
+
+
+
+
+.loader {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    display: grid;
+    place-items: center center;
+    z-index: 3;
+    margin: auto;
+    pointer-events: none; 
+    animation: loading 3s linear both; 
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 10px solid black;
+    border-left-color: #FF79DA;
+    border-right-color: #99E2D0;
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 3s linear both;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+@keyframes loading {
+    0% {
+      opacity: 1;
+    }
+    99% {
+      opacity:1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+}
+
+
+
+/* ************* spinner ************/
+
+/*
+.loader {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    opacity: 1;
+    overflow: hidden;
+    z-index: 3;
+    animation-name: loading;
+    animation-duration: 2s;
+   
+}
+
+.spinner {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: blue;
+    animation: spin 2s linear infinite;
+}
+
+.spinner:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: black;
+    animation: spin 1.5s linear infinite;
+}
+
+.spinner:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: red;
+    -webkit-animation: spin 0.75s linear infinite;
+    animation: spin 0.75s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading {
+    0% {
+        height: 100%;
+    }
+    99% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+*/
+
+
