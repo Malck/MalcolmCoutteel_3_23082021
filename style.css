@@ -120,7 +120,7 @@ header .image-header {
 
 .section-1 .reserv .btn {
   text-decoration: none;
-  background-color: #FF79DA;
+  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
   border-radius: 30px;
   width: 220px;
   height: 50px;
@@ -139,7 +139,9 @@ header .image-header {
 }
 
 .section-1 .reserv .btn:hover {
-  background-color: #ff8de0;
+  background: #ff83dd;
+  -webkit-box-shadow: 6px 8px 8px #b4b4b4;
+          box-shadow: 6px 8px 8px #b4b4b4;
 }
 
 /*************************** SECTION 2 *****************************/
@@ -178,14 +180,20 @@ header .image-header {
       -ms-flex-align: center;
           align-items: center;
   color: black;
-  /*  text-decoration: none; */
   width: 315px;
   height: 75px;
   background-color: #f6f6f6;
-  /* border: solid 1px rgb(246, 246, 246); */
   border-radius: 20px;
   -webkit-box-shadow: 3px 8px 6px #e6e6e696;
           box-shadow: 3px 8px 6px #e6e6e696;
+}
+
+.section-2 .fonction a:hover {
+  background-color: #f5edff;
+}
+
+.section-2 .fonction a:hover i {
+  color: #9356DC;
 }
 
 .section-2 .fonction i {
@@ -396,6 +404,42 @@ header a.btn i {
   margin: 30px 0;
 }
 
+.titremenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 35px 0 0;
+  position: relative;
+}
+
+.titremenu h1 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+.titremenu i {
+  color: black;
+  font-size: 24px;
+}
+
+.titremenu .like {
+  position: absolute;
+  right: 20px;
+}
+
+.titremenu .like .fas {
+  visibility: hidden;
+  color: #aa70f1;
+  left: -27px;
+  top: -1px;
+  font-size: 22px;
+}
+
 .opening {
   position: relative;
 }
@@ -438,37 +482,156 @@ header a.btn i {
   left: 0px;
 }
 
-.titremenu {
+.foodlist {
+  height: 230px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 35px 0 0;
 }
 
-.titremenu h1 {
-  font-family: "Shrikhand", sans-serif;
-}
-
-.titremenu i {
+.food {
+  width: 100%;
+  height: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 6px 6px 15px lightgrey;
+          box-shadow: 6px 6px 15px lightgrey;
   color: black;
-  font-size: 24px;
+  -webkit-animation: food-loading 2s forwards;
+          animation: food-loading 2s forwards;
+  overflow: hidden;
+}
+
+.food p {
+  font-size: 15px;
+}
+
+.price {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 10px;
+  padding-left: 22px;
+  width: 60px;
 }
 
 .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 4em;
+  padding: 10px;
 }
 
+.text p,
+.text h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #99e2d0;
+}
+
+.box .check {
+  margin: auto;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.box .check .fa-check-circle {
+  color: white;
+  font-size: 1.3em;
+}
+
+/*
+.food:hover > .box {
+    width: 60px; 
+    .check {
+        transform: rotate(360deg);
+    }
+}
+*/
+.food:hover .box {
+  width: 60px;
+}
+
+.food:hover .box .check {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 0;
+  background-color: #99e2d0;
+  position: relative;
+  right: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+/*
+.food:hover{
+    
+    .checkbox{
+        display: inline-block;
+        animation: checkarrow 1s both;
+    }
+}
+
+@keyframes checkarrow{
+    0%{
+        transform: translateX(0)
+    }
+    100%{
+        transform:translateX(-90px)
+    }
+}
+
+*/
 .order {
   margin-top: 40px;
   padding-bottom: 50px;
@@ -482,7 +645,7 @@ header a.btn i {
 
 .order .btn {
   text-decoration: none;
-  background-color: #FF79DA;
+  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
   border-radius: 30px;
   width: 220px;
   height: 50px;
@@ -501,88 +664,52 @@ header a.btn i {
 }
 
 .order .btn:hover {
-  background-color: #ff8de0;
+  background: #ff83dd;
+  -webkit-box-shadow: 6px 8px 8px #b4b4b4;
+          box-shadow: 6px 8px 8px #b4b4b4;
 }
 
-.foodlist {
-  height: 230px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.food {
-  width: 335px;
-  height: 65px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  background-color: white;
-  border-radius: 15px;
-  padding: 10px;
-  -webkit-box-shadow: 6px 6px 15px lightgrey;
-          box-shadow: 6px 6px 15px lightgrey;
-  color: black;
-  -webkit-animation: food-loading 1s forwards;
-          animation: food-loading 1s forwards;
-  overflow: hidden;
-}
-
-.food p {
-  font-size: 15px;
-}
-
-.food2 {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-
-.food3 {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-}
-
+/* ***************************  Animations *********************/
 @-webkit-keyframes food-loading {
   0% {
     color: white;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
   }
   100% {
+    opacity: 1;
     color: black;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
 }
-
 @keyframes food-loading {
   0% {
     color: white;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
   }
   100% {
+    opacity: 1;
     color: black;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
 }
 
-/* ***************************  Animations **********************/
+.food2 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.food3 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+/**************** Heart fill ***********/
 .like {
   position: absolute;
   right: 20px;
@@ -615,6 +742,14 @@ header a.btn i {
           animation: fadeIn ease 3s;
 }
 
+.like-menu {
+  top: 40px;
+}
+
+.like-menu i {
+  left: 0px;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -633,6 +768,7 @@ header a.btn i {
   }
 }
 
+/*******************spinner *************/
 .loader {
   width: 100%;
   height: 100%;
@@ -707,6 +843,49 @@ header a.btn i {
     display: none;
   }
 }
+
+/**************************** responsive ****************** 
+
+ + 1440 
+
+.section-3{
+    height:500px
+}
+
+.image-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+important ! 
+
+.food p{
+    max-width: 285px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ************* spinner ************/
 /*

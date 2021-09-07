@@ -26,6 +26,13 @@ img{
     height:175px;
 }
 
+$color-violet:#9356DC;
+$color-pink:#FF79DA;
+$color-blue:#99E2D0 ;
+$color-greyclear:rgb(246, 246, 246);
+$color-grey:rgb(234, 234, 234) ; 
+$color-footer:rgb(53, 53, 53) ;
+
 /* **************couleurs utiles **********
 
 violet : #9356DC    rose : #FF79DA   bleu : #99E2D0   
@@ -54,7 +61,7 @@ header {
     flex-direction: column;
     padding: 0;
     
-     .position {
+    .position {
         background-color: rgb(234, 234, 234);  
         height: 50px;
         padding-right: 32px;
@@ -67,9 +74,9 @@ header {
             padding-right: 20px;
         }
 
-      }
+    }
 
-     .reserv{
+    .reserv{
           background:rgb(246, 246, 246) ;
           display: flex;
           flex-direction: column;
@@ -87,7 +94,7 @@ header {
         }
         .btn{
             text-decoration: none;
-            background-color:#FF79DA ;
+            background: linear-gradient(175deg, lighten($color-pink, 5%) 0%, lighten($color-violet, 5%) 100%); 
             border-radius: 30px;
             width: 220px;
             height: 50px;
@@ -97,12 +104,11 @@ header {
             color: white;
             box-shadow: 3px 5px 6px #dadada;
             &:hover{
-                background-color: lighten($color: #FF79DA, $amount: 4)
+                background: lighten($color: #FF79DA, $amount: 2);
+                box-shadow: 6px 8px 8px  rgb(180, 180, 180);
             }
-            
         }
-      }
-
+    }
 }
 
 /*************************** SECTION 2 *****************************/
@@ -125,13 +131,17 @@ header {
             display: flex;
             align-items: center;
             color: black;
-           /*  text-decoration: none; */
             width: 315px;
             height: 75px;
             background-color: rgb(246, 246, 246);
-           /* border: solid 1px rgb(246, 246, 246); */
             border-radius: 20px;
             box-shadow: 3px 8px 6px #e6e6e696;
+            &:hover{
+                background-color:rgb(245, 237, 255);
+                i{
+                    color:$color-violet;
+                }
+            }
         }
         i{
             padding:0 30px;
@@ -256,7 +266,7 @@ figure{
 /***************************FOOTER************************ */
 footer{
     height:240px;
-    background-color:rgb(53, 53, 53);
+    background-color: $color-footer;
     padding: 0 25px;
     color: white;
 
@@ -298,14 +308,14 @@ a{
 
 header {
     a.btn {
-    position: absolute;
-    top: 26px;
-    left: 20px;
-    color: black;
-    i{
-    font-size: larger;
+        position: absolute;
+        top: 26px;
+        left: 20px;
+        color: black;
+        i{
+            font-size: larger;
+        }
     }
-}
 }
 
 .maincontent{
@@ -315,6 +325,34 @@ header {
     h4{
         margin: 30px 0 ;
     }
+}
+
+
+.titremenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 0;
+    position: relative;
+    h1{
+        font-family: "Shrikhand", sans-serif;
+    }
+
+    i{
+        color: black;
+        font-size: 24px;
+    }
+    .like{
+        position: absolute;
+        right: 20px;
+        .fas {
+            visibility: hidden;
+            color: #aa70f1;
+            left: -27px;
+            top: -1px;
+            font-size: 22px;
+        }
+    }   
 }
 
 .opening {
@@ -355,26 +393,115 @@ header {
 }
 
 
-.titremenu{
+.foodlist{
+    height: 230px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 35px 0 0;
+}
+.food{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 6px 6px 15px lightgrey;
+    color: black;
+    animation: food-loading 2s forwards;
+    overflow: hidden;
+    p{
+        font-size: 15px;
+    } 
+}
 
-    h1{
-        font-family: "Shrikhand", sans-serif;
-    }
+.price {
+    align-items: flex-end;
+    display: flex;
+    padding-bottom: 10px;
+    padding-left: 22px;
+    width: 60px;
+}
 
-    i{
-        color: black;
-        font-size: 24px;
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 4em;
+    padding: 10px;
+    p,
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      white-space: nowrap; 
     }
 }
 
-.text{
-    display: flex;
-    justify-content: space-between;
+
+.box {
+    display: flex; 
+    width: 0;
+    transition: all 0.5s;
+    background-color: #99e2d0;
+    .check {
+        margin: auto;
+        transition: transform 0.5s;
+        transform: rotate(0deg);
+        .fa-check-circle {
+            color: white;
+            font-size: 1.3em;
+        }
+    }
 }
+/*
+.food:hover > .box {
+    width: 60px; 
+    .check {
+        transform: rotate(360deg);
+    }
+}
+*/
+.food:hover{
+    .box {
+    width: 60px;
+    .check{
+        transform: rotate(360deg);
+    }
+    }
+}
+
+
+.checkbox{
+    display: flex;
+    width: 0;
+    background-color: #99e2d0;
+    position: relative;
+    right: 0;  
+    transition: all 1s;
+
+}
+
+/*
+.food:hover{
+    
+    .checkbox{
+        display: inline-block;
+        animation: checkarrow 1s both;
+    }
+}
+
+@keyframes checkarrow{
+    0%{
+        transform: translateX(0)
+    }
+    100%{
+        transform:translateX(-90px)
+    }
+}
+
+*/
 
 .order{
     margin-top: 40px;
@@ -383,7 +510,7 @@ header {
     justify-content: center;
     .btn{
         text-decoration: none;
-        background-color:#FF79DA ;
+        background: linear-gradient(175deg, lighten($color-pink, 5%) 0%, lighten($color-violet, 5%) 100%); 
         border-radius: 30px;
         width: 220px;
         height: 50px;
@@ -393,60 +520,46 @@ header {
         color: white;
         box-shadow: 3px 5px 6px #dadada;
         &:hover{
-            background-color: lighten($color: #FF79DA, $amount: 4)
-        
+            background: lighten($color: #FF79DA, $amount: 2);
+            box-shadow: 6px 8px 8px  rgb(180, 180, 180);
         }
-    }
-}
-
-.foodlist{
-    height: 230px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.food{
-    width: 335px;
-    height: 65px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: white;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 6px 6px 15px lightgrey;
-    color: black;
-    animation: food-loading 1s forwards;
-    overflow: hidden;
-    p{
-        font-size: 15px;
-    }
-    
-}
-.food2{
-    animation-delay: 0.4s;
+    } 
 
 }
-.food3{
-    animation-delay: 0.8s;
-}
+
+
+
+
+
+/* ***************************  Animations *********************/
+
+
+
 @keyframes food-loading{
 
 0% {
     color: white;
-    transform: translateY(10px);
+    transform: translateY(20px);
+    opacity: 0;
 }
+
 100% {
-    
+    opacity: 1;
     color: black;
     transform: translateY(0px);
 }
 }
 
-/* ***************************  Animations **********************/
+.food2{
+    animation-delay: 100ms;
+}
+
+.food3{
+    animation-delay: 200ms;
+}
 
 
-
+/**************** Heart fill ***********/ 
 .like {
     position: absolute;
     right: 20px;
@@ -476,6 +589,13 @@ header {
     visibility: visible;
     animation: fadeIn ease 3s;
 }
+
+.like-menu {
+    top: 40px;
+    i{
+        left: 0px;
+    }
+}
   
 @keyframes fadeIn {
     0% {
@@ -487,11 +607,7 @@ header {
   }  
 
 
-
-
-
-
-
+/*******************spinner *************/
 .loader {
     width: 100%;
     height: 100%;
@@ -515,7 +631,7 @@ header {
     margin: auto;
     animation: spin 3s linear both;
 }
-  
+ 
 @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -524,7 +640,7 @@ header {
       transform: rotate(360deg);
     }
 }
-  
+
 @keyframes loading {
     0% {
       opacity: 1;
@@ -537,6 +653,49 @@ header {
       display: none;
     }
 }
+
+
+
+/**************************** responsive ****************** 
+
+ + 1440 
+
+.section-3{
+    height:500px
+}
+
+.image-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+important ! 
+
+.food p{
+    max-width: 285px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
