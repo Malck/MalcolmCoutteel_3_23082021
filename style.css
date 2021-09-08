@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -379,7 +380,25 @@ a {
 /******************* Menus *********************/
 .imageback1 {
   background: url(../MalcolmCoutteel_3_23082021/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg) center/cover;
-  width: 375px;
+  width: 100%;
+  height: 260px;
+}
+
+.imageback2 {
+  background: url(../MalcolmCoutteel_3_23082021/images/stil-u2Lp8tXIcjw-unsplash.jpg) center/cover;
+  width: 100%;
+  height: 260px;
+}
+
+.imageback3 {
+  background: url(../MalcolmCoutteel_3_23082021/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg) center/cover;
+  width: 100%;
+  height: 260px;
+}
+
+.imageback4 {
+  background: url(../MalcolmCoutteel_3_23082021/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg) center/cover;
+  width: 100%;
   height: 260px;
 }
 
@@ -440,46 +459,23 @@ header a.btn i {
   font-size: 22px;
 }
 
-.opening {
+/*******  Barre verte sous les titres Entrées , Plats , Desserts *** ****/
+.opening, .miding, .ending {
   position: relative;
 }
 
-.opening h4:after {
+.opening h4:after, .miding h4:after, .ending h4:after {
   content: "";
   width: 40px;
   height: 2px;
   background: #99E2D0;
   position: absolute;
-  top: 22px;
+  top: 55px;
   left: 0px;
 }
 
-.miding {
-  position: relative;
-}
-
-.miding h4:after {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background: #99E2D0;
-  position: absolute;
-  top: 22px;
-  left: 0px;
-}
-
-.ending {
-  position: relative;
-}
-
-.ending h4:after {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background: #99E2D0;
-  position: absolute;
-  top: 22px;
-  left: 0px;
+.openingspace .foodlist {
+  height: 300px;
 }
 
 .foodlist {
@@ -514,8 +510,8 @@ header a.btn i {
   -webkit-box-shadow: 6px 6px 15px lightgrey;
           box-shadow: 6px 6px 15px lightgrey;
   color: black;
-  -webkit-animation: food-loading 2s forwards;
-          animation: food-loading 2s forwards;
+  -webkit-animation: food-loading 1.5s both;
+          animation: food-loading 1.5s both;
   overflow: hidden;
 }
 
@@ -584,14 +580,6 @@ header a.btn i {
   font-size: 1.3em;
 }
 
-/*
-.food:hover > .box {
-    width: 60px; 
-    .check {
-        transform: rotate(360deg);
-    }
-}
-*/
 .food:hover .box {
   width: 60px;
 }
@@ -601,37 +589,6 @@ header a.btn i {
           transform: rotate(360deg);
 }
 
-.checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 0;
-  background-color: #99e2d0;
-  position: relative;
-  right: 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-/*
-.food:hover{
-    
-    .checkbox{
-        display: inline-block;
-        animation: checkarrow 1s both;
-    }
-}
-
-@keyframes checkarrow{
-    0%{
-        transform: translateX(0)
-    }
-    100%{
-        transform:translateX(-90px)
-    }
-}
-
-*/
 .order {
   margin-top: 40px;
   padding-bottom: 50px;
@@ -669,7 +626,8 @@ header a.btn i {
           box-shadow: 6px 8px 8px #b4b4b4;
 }
 
-/* ***************************  Animations *********************/
+/* ***************************  ANIMATIONS *********************/
+/* ******** Arrivé des repas en décalé  **********/
 @-webkit-keyframes food-loading {
   0% {
     color: white;
@@ -707,6 +665,41 @@ header a.btn i {
 .food3 {
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
+}
+
+.food4 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.food5 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.food6 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.food7 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.food8 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
+.food9 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+.food10 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
 }
 
 /**************** Heart fill ***********/
@@ -768,7 +761,7 @@ header a.btn i {
   }
 }
 
-/*******************spinner *************/
+/*******************    spinner     *************/
 .loader {
   width: 100%;
   height: 100%;
@@ -777,7 +770,7 @@ header a.btn i {
   display: -ms-grid;
   display: grid;
   place-items: center center;
-  z-index: 3;
+  z-index: 10;
   margin: auto;
   pointer-events: none;
   -webkit-animation: loading 3s linear both;
@@ -827,7 +820,7 @@ header a.btn i {
   }
   100% {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -840,53 +833,162 @@ header a.btn i {
   }
   100% {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 
-/**************************** responsive ****************** 
-
- + 1440 
-
-.section-3{
-    height:500px
-}
-
 .image-menu {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
+/**************************** responsive ******************/
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 
+.opening, .miding, .ending {
+  width: 400px;
+}
+
+@media screen and (min-width: 320px) {
+  .image-menu {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .image-menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .section-3 .figure {
+    width: 335px;
+  }
+  .section-3 {
+    height: 800px;
+  }
+  footer {
+    height: 135px;
+  }
+  footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .image-menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .section-3 a {
+    margin: 20px;
+  }
+  .section-3 figure {
+    width: 450px;
+  }
+  .section-3 img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .section-1 .reserv {
+    height: 200px;
+  }
+  .section-2 {
+    height: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-2 h1 {
+    margin: 0;
+    padding-right: 50px;
+  }
+  .section-2 .fonction {
+    width: 1400px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100px;
+  }
+  .section-3 {
+    height: 470px;
+  }
+  .section-3 a {
+    margin: 0;
+  }
+  .section-3 figure {
+    width: 335px;
+  }
+  .image-menu {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+/*
 important ! 
 
 .food p{
     max-width: 285px
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 /* ************* spinner ************/
 /*
 .loader {
