@@ -617,11 +617,18 @@ header {
     width: 400px;
 }
 
-@media screen and (max-width:320px){
+@media screen and (max-width:375px){
 
-    .section-3 img {
-        width: 280px;
+    .section-3 a {
+        width: 100%;
     }
+    .section-3 figure{
+        width: 100%;
+    }
+    .section-3 img {
+        width: 100%;
+    }
+
     .section-2 .fonction a {
         width: 280px;
     }
