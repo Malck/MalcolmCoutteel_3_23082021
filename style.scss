@@ -7,7 +7,6 @@
     font-family: "Roboto", sans-serif;
     outline:none;
 }
-
 section{
     padding:0 20px;
     margin:0 auto;
@@ -20,10 +19,12 @@ h2{
     font-size: 1rem;
     font-weight: 900;
 }
-
 img{
     width:340px;
     height:175px;
+}
+a{
+    text-decoration: none;
 }
 
 $color-violet:#9356DC;
@@ -32,14 +33,7 @@ $color-blue:#99E2D0 ;
 $color-greyclear:rgb(246, 246, 246);
 $color-grey:rgb(234, 234, 234) ; 
 $color-footer:rgb(53, 53, 53) ;
-
-/* **************couleurs utiles **********
-
-violet : #9356DC    rose : #FF79DA   bleu : #99E2D0   
-
-gris clair : rgb(246, 246, 246) 
-gris : rgb(234, 234, 234)  
-gris footer : rgb(53, 53, 53)          */ 
+ 
 
 header {
     height:65px;
@@ -54,7 +48,8 @@ header {
       margin-top: 5px;
 }
 }
-/********************************** SECTION 1 *****************************/
+
+/********************************************* SECTION 1 *****************************/
 .section-1{
     display: flex;
     justify-content: center;
@@ -62,22 +57,35 @@ header {
     padding: 0;
     
     .position {
-        background-color: rgb(234, 234, 234);  
+        background-color: $color-grey;  
         height: 50px;
-        padding-right: 32px;
+        padding-left: 15px;
         justify-content: center;
         align-items: center;
         display: flex;
         border-top: solid 2px rgb(216, 216, 216);
        
         i{
-            padding-right: 20px;
+            padding-right: 12px;
         }
-
+        input.positionlocal_type {
+            background-color: $color-grey;
+            border: none;
+            font-size: 18px;
+            width: 160px;
+            padding: 7px;
+        }
+        input::placeholder{
+            color: black;
+        }
+        input:focus{
+            border: 2px solid $color-violet;
+            background-color: $color-grey;
+        }
     }
 
     .reserv{
-          background:rgb(246, 246, 246) ;
+          background:$color-greyclear ;
           display: flex;
           flex-direction: column;
           height: 290px;
@@ -104,14 +112,14 @@ header {
             color: white;
             box-shadow: 3px 5px 6px #dadada;
             &:hover{
-                background: lighten($color: #FF79DA, $amount: 2);
+                background: lighten($color: $color-pink, $amount: 2);
                 box-shadow: 6px 8px 8px  rgb(180, 180, 180);
             }
         }
     }
 }
 
-/*************************** SECTION 2 *****************************/
+/************************************** SECTION 2 *****************************/
 .section-2{
  height:410px;
 
@@ -119,6 +127,7 @@ header {
          margin-top: 50px;
          margin-bottom: 30px;
     }
+
     .fonction{
         display: flex;
         flex-direction: column;
@@ -133,7 +142,7 @@ header {
             color: black;
             width: 315px;
             height: 75px;
-            background-color: rgb(246, 246, 246);
+            background-color: $color-greyclear;
             border-radius: 20px;
             box-shadow: 3px 8px 6px #e6e6e696;
             &:hover{
@@ -149,45 +158,16 @@ header {
             width: 70px;
         } 
     } 
-
 }
 
 .num1 , .num2 , .num3{
     position: relative;
 }
-.num1 p{
-    border: 1px solid #9356DC;
-    height: 25px;
-    width: 25px;
-    border-radius: 25px;
-    background-color:#9356DC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
-    top: 25px;
-    left: -12px;
-}
 .num1 i{
     font-size: large;
 }
-.num2 p{
-    border: 1px solid #9356DC;
-    height: 25px;
-    width: 25px;
-    border-radius: 25px;
-    background-color:#9356DC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
-    top: 25px;
-    left: -12px;
-}
-.num3 p{
-    border: 1px solid #9356DC;
+.num1 p, .num2 p, .num3 p{
+    border: 1px solid $color-violet;
     height: 25px;
     width: 25px;
     border-radius: 25px;
@@ -205,14 +185,13 @@ header {
 
 .section-3{
     height: 1300px;
-    background-color: rgb(246, 246, 246);
+    background-color: $color-greyclear;
 
     h1{
         padding:55px 0 25px 0;
     }
 
     a{
-        /* text-decoration: none; */
         color: black;
     }
     
@@ -221,6 +200,23 @@ header {
         background-color: white;
         border-radius: 15px;
         box-shadow: 2px 2px 8px #e6e6e6;
+        position: relative;
+        .new{
+            position: absolute;
+            background-color: $color-blue;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 30px;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: rgb(0, 135, 102 );
+            border-radius: 2px; 
+        }
     }
     img{
         width:335px;
@@ -240,30 +236,9 @@ header {
     }
 
 }
-figure{
-    position: relative;
-    .new{
-        position: absolute;
-        background-color: #99E2D0;
-        top: 20px;
-        right: 20px;
-        width: 80px;
-        height: 30px;
-        padding: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        color: rgb(0, 135, 102 );
-        border-radius: 2px; 
-    }
-    
-}
-
-
 
 /***************************FOOTER************************ */
+
 footer{
     height:240px;
     background-color: $color-footer;
@@ -272,7 +247,6 @@ footer{
 
     h3{
         padding: 25px 0;
-
         font-family: "Shrikhand", sans-serif;
         font-size: 20px;
         letter-spacing: 1px;
@@ -294,11 +268,7 @@ footer .fa-hands-helping{
     font-size: small;
 }
 
-a{
-    text-decoration: none;
-}
-
-/******************* Menus *********************/ 
+/*************************************** MENUS ********** *********************/ 
 
 .imageback1{
     background:url(../MalcolmCoutteel_3_23082021/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg) center/cover;
@@ -321,8 +291,6 @@ a{
     height: 260px;
 }
 
-
-
 header {
     a.btn {
         position: absolute;
@@ -336,14 +304,13 @@ header {
 }
 
 .maincontent{
-    background-color: rgb(246, 246, 246);
+    background-color: $color-greyclear;
     border-radius: 30px 30px 0 0;
     margin-top: -40px;
     h4{
         margin: 30px 0 ;
     }
 }
-
 
 .titremenu{
     display: flex;
@@ -378,13 +345,13 @@ header {
     content: "";
     width: 40px;
     height: 2px;
-    background: #99E2D0;
+    background: $color-blue;
     position: absolute;
     top: 55px;
     left: 0px;
 }
 }
-
+/***************** menu 2 avec 4 div au lieu de 3 **********/ 
 .openingspace{
     .foodlist{
         height: 300px;
@@ -413,35 +380,12 @@ header {
         font-size: 15px;
     } 
 }
-
-.price {
-    align-items: flex-end;
-    display: flex;
-    padding-bottom: 10px;
-    padding-left: 22px;
-    width: 60px;
-}
-
-.text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-grow: 1;
-    width: 4em;
-    padding: 10px;
-    p,
-    h2 {
-      overflow: hidden;
-      text-overflow: ellipsis; 
-      white-space: nowrap; 
-    }
-}
-
+/* ******************  Animation box verte avec fleche **************/ 
 .box {
     display: flex; 
     width: 0;
     transition: all 0.5s;
-    background-color: #99e2d0;
+    background-color: $color-blue;
     .check {
         margin: auto;
         transition: transform 0.5s;
@@ -460,6 +404,28 @@ header {
         transform: rotate(360deg);
     }
     }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 4em;
+    padding: 10px;
+    p,
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      white-space: nowrap; 
+    }
+}
+.price {
+    align-items: flex-end;
+    display: flex;
+    padding-bottom: 10px;
+    padding-left: 22px;
+    width: 60px;
 }
 
 
@@ -486,7 +452,6 @@ header {
     } 
 
 }
-
 
 
 /* ***************************  ANIMATIONS *********************/
@@ -539,7 +504,6 @@ header {
 
 /**************** Heart fill ***********/ 
 
-
 .like {
     position: absolute;
     right: 20px;
@@ -560,7 +524,7 @@ header {
 
 .like .fas {
     visibility: hidden;
-    color: #9356dc;
+    color: $color-violet;
     position: relative;
     left: 4px;
 }
@@ -589,7 +553,6 @@ header {
 
 /*******************    spinner     *************/
 
-
 .loader {
     width: 100%;
     height: 100%;
@@ -607,8 +570,8 @@ header {
     width: 50px;
     height: 50px;
     border: 10px solid black;
-    border-left-color: #FF79DA;
-    border-right-color: #99E2D0;
+    border-left-color: $color-violet;
+    border-right-color: $color-blue;
     border-radius: 100%;
     margin: auto;
     animation: spin 3s linear both;
@@ -636,32 +599,43 @@ header {
     }
 }
 
+
+/**************************** responsive ******************/
+
 .image-menu{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-/**************************** responsive ******************/
-
 .flex {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 .opening, .miding, .ending{
     width: 400px;
 }
 
+@media screen and (max-width:320px){
+
+    .section-3 img {
+        width: 280px;
+    }
+    .section-2 .fonction a {
+        width: 280px;
+    }
+}
+
 @media screen and (min-width:320px){
+
     .image-menu{
         align-items: center;
     }
-    
 }
 
 @media screen and (min-width:770px){
+
     .image-menu{
         flex-direction: row;
         justify-content: space-around;
@@ -707,7 +681,6 @@ header {
 
 @media screen and (min-width:1420px){
 
-    
     .section-1 .reserv {
         height: 200px;
     }
@@ -750,120 +723,17 @@ header {
     }
 }
 
-/*
-important ! 
-
-.food p{
-    max-width: 285px
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ************* spinner ************/
-
-/*
-.loader {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: black;
-    opacity: 1;
-    overflow: hidden;
-    z-index: 3;
-    animation-name: loading;
-    animation-duration: 2s;
-   
-}
-
-.spinner {
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: blue;
-    animation: spin 2s linear infinite;
-}
-
-.spinner:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: black;
-    animation: spin 1.5s linear infinite;
-}
-
-.spinner:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: red;
-    -webkit-animation: spin 0.75s linear infinite;
-    animation: spin 0.75s linear infinite;
-}
-
-
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
+@media screen and (min-width:1650px){
+    .section-2 h1 {
+        margin: 0;
+        padding-right: 280px;
     }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
+    .section-2 .fonction {
+        padding-right: 100px;
     }
 }
 
-@keyframes loading {
-    0% {
-        height: 100%;
-    }
-    99% {
-        height: 100%;
-    }
-    100% {
-        height: 0;
-    }
-}
 
-*/
+
 
 

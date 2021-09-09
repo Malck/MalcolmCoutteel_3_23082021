@@ -29,13 +29,10 @@ img {
   height: 175px;
 }
 
-/* **************couleurs utiles **********
+a {
+  text-decoration: none;
+}
 
-violet : #9356DC    rose : #FF79DA   bleu : #99E2D0   
-
-gris clair : rgb(246, 246, 246) 
-gris : rgb(234, 234, 234)  
-gris footer : rgb(53, 53, 53)          */
 header {
   height: 65px;
   display: -webkit-box;
@@ -56,7 +53,7 @@ header .image-header {
   margin-top: 5px;
 }
 
-/********************************** SECTION 1 *****************************/
+/********************************************* SECTION 1 *****************************/
 .section-1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,7 +71,7 @@ header .image-header {
 .section-1 .position {
   background-color: #eaeaea;
   height: 50px;
-  padding-right: 32px;
+  padding-left: 15px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -88,7 +85,36 @@ header .image-header {
 }
 
 .section-1 .position i {
-  padding-right: 20px;
+  padding-right: 12px;
+}
+
+.section-1 .position input.positionlocal_type {
+  background-color: #eaeaea;
+  border: none;
+  font-size: 18px;
+  width: 160px;
+  padding: 7px;
+}
+
+.section-1 .position input::-webkit-input-placeholder {
+  color: black;
+}
+
+.section-1 .position input:-ms-input-placeholder {
+  color: black;
+}
+
+.section-1 .position input::-ms-input-placeholder {
+  color: black;
+}
+
+.section-1 .position input::placeholder {
+  color: black;
+}
+
+.section-1 .position input:focus {
+  border: 2px solid #9356DC;
+  background-color: #eaeaea;
 }
 
 .section-1 .reserv {
@@ -145,7 +171,7 @@ header .image-header {
           box-shadow: 6px 8px 8px #b4b4b4;
 }
 
-/*************************** SECTION 2 *****************************/
+/************************************** SECTION 2 *****************************/
 .section-2 {
   height: 410px;
 }
@@ -207,53 +233,11 @@ header .image-header {
   position: relative;
 }
 
-.num1 p {
-  border: 1px solid #9356DC;
-  height: 25px;
-  width: 25px;
-  border-radius: 25px;
-  background-color: #9356DC;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  position: absolute;
-  top: 25px;
-  left: -12px;
-}
-
 .num1 i {
   font-size: large;
 }
 
-.num2 p {
-  border: 1px solid #9356DC;
-  height: 25px;
-  width: 25px;
-  border-radius: 25px;
-  background-color: #9356DC;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  position: absolute;
-  top: 25px;
-  left: -12px;
-}
-
-.num3 p {
+.num1 p, .num2 p, .num3 p {
   border: 1px solid #9356DC;
   height: 25px;
   width: 25px;
@@ -285,7 +269,6 @@ header .image-header {
 }
 
 .section-3 a {
-  /* text-decoration: none; */
   color: black;
 }
 
@@ -295,29 +278,10 @@ header .image-header {
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px 8px #e6e6e6;
           box-shadow: 2px 2px 8px #e6e6e6;
-}
-
-.section-3 img {
-  width: 335px;
-  height: 175px;
-  border-radius: 15px 15px 0px 0px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.section-3 figcaption h2 {
-  padding: 15px 15px 10px;
-}
-
-.section-3 figcaption p {
-  padding: 0 0 20px 15px;
-}
-
-figure {
   position: relative;
 }
 
-figure .new {
+.section-3 figure .new {
   position: absolute;
   background-color: #99E2D0;
   top: 20px;
@@ -338,6 +302,22 @@ figure .new {
           align-items: center;
   color: #008766;
   border-radius: 2px;
+}
+
+.section-3 img {
+  width: 335px;
+  height: 175px;
+  border-radius: 15px 15px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-3 figcaption h2 {
+  padding: 15px 15px 10px;
+}
+
+.section-3 figcaption p {
+  padding: 0 0 20px 15px;
 }
 
 /***************************FOOTER************************ */
@@ -373,11 +353,7 @@ footer .fa-hands-helping {
   font-size: small;
 }
 
-a {
-  text-decoration: none;
-}
-
-/******************* Menus *********************/
+/*************************************** MENUS ********** *********************/
 .imageback1 {
   background: url(../MalcolmCoutteel_3_23082021/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg) center/cover;
   width: 100%;
@@ -474,6 +450,7 @@ header a.btn i {
   left: 0px;
 }
 
+/***************** menu 2 avec 4 div au lieu de 3 **********/
 .openingspace .foodlist {
   height: 300px;
 }
@@ -519,16 +496,39 @@ header a.btn i {
   font-size: 15px;
 }
 
-.price {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+/* ******************  Animation box verte avec fleche **************/
+.box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 10px;
-  padding-left: 22px;
+  width: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #99E2D0;
+}
+
+.box .check {
+  margin: auto;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.box .check .fa-check-circle {
+  color: white;
+  font-size: 1.3em;
+}
+
+.food:hover .box {
   width: 60px;
+}
+
+.food:hover .box .check {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .text {
@@ -555,38 +555,16 @@ header a.btn i {
   white-space: nowrap;
 }
 
-.box {
+.price {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  background-color: #99e2d0;
-}
-
-.box .check {
-  margin: auto;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.box .check .fa-check-circle {
-  color: white;
-  font-size: 1.3em;
-}
-
-.food:hover .box {
+  padding-bottom: 10px;
+  padding-left: 22px;
   width: 60px;
-}
-
-.food:hover .box .check {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
 }
 
 .order {
@@ -724,7 +702,7 @@ header a.btn i {
 
 .like .fas {
   visibility: hidden;
-  color: #9356dc;
+  color: #9356DC;
   position: relative;
   left: 4px;
 }
@@ -781,7 +759,7 @@ header a.btn i {
   width: 50px;
   height: 50px;
   border: 10px solid black;
-  border-left-color: #FF79DA;
+  border-left-color: #9356DC;
   border-right-color: #99E2D0;
   border-radius: 100%;
   margin: auto;
@@ -837,6 +815,7 @@ header a.btn i {
   }
 }
 
+/**************************** responsive ******************/
 .image-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -849,7 +828,6 @@ header a.btn i {
       flex-wrap: wrap;
 }
 
-/**************************** responsive ******************/
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -862,6 +840,15 @@ header a.btn i {
 
 .opening, .miding, .ending {
   width: 400px;
+}
+
+@media screen and (max-width: 320px) {
+  .section-3 img {
+    width: 280px;
+  }
+  .section-2 .fonction a {
+    width: 280px;
+  }
 }
 
 @media screen and (min-width: 320px) {
@@ -982,98 +969,13 @@ header a.btn i {
   }
 }
 
-/*
-important ! 
-
-.food p{
-    max-width: 285px
+@media screen and (min-width: 1650px) {
+  .section-2 h1 {
+    margin: 0;
+    padding-right: 280px;
+  }
+  .section-2 .fonction {
+    padding-right: 100px;
+  }
 }
-*/
-/* ************* spinner ************/
-/*
-.loader {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: black;
-    opacity: 1;
-    overflow: hidden;
-    z-index: 3;
-    animation-name: loading;
-    animation-duration: 2s;
-   
-}
-
-.spinner {
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: blue;
-    animation: spin 2s linear infinite;
-}
-
-.spinner:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: black;
-    animation: spin 1.5s linear infinite;
-}
-
-.spinner:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top-color: red;
-    -webkit-animation: spin 0.75s linear infinite;
-    animation: spin 0.75s linear infinite;
-}
-
-
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes loading {
-    0% {
-        height: 100%;
-    }
-    99% {
-        height: 100%;
-    }
-    100% {
-        height: 0;
-    }
-}
-
-*/
 /*# sourceMappingURL=style.css.map */
